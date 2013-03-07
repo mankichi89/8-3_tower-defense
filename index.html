@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<title>index</title>
+		<script type="text/javascript" src="lib/caat.js"></script>
+		<script type="text/javascript">
+			function init () {
+				// Create and setup director
+				var director = new CAAT.Foundation.Director().initialize (
+					800,
+					600,
+					document.getElementById ("rootCanvas")
+				);
+				// Generate scene
+				var scene = director.createScene ();
+				
+				// Create black square and add to sceen
+				var actor = new CAAT.Foundation.Actor ();
+				actor.setLocation (200, 200)
+					 .setSize (100, 100)
+					 .setFillStyle ("#000000");
+					 
+				scene.addChild (actor);
+				
+				CAAT.loop (1);	
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<canvas id="rootCanvas" width="800" height="600"></canvas>
+	</body>
+</html>
